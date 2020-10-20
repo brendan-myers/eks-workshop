@@ -13,4 +13,6 @@ tags:
 {{< youtube _7S0bLyEIuI >}}
 
 ![microservices](/images/crystal.svg)
+
+To deploy our microservices, we will need to go through the following stages:
 {{% children showhidden="false" %}}

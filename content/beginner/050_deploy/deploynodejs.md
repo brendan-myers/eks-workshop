@@ -18,3 +18,7 @@ We can watch the progress by looking at the deployment status:
 ```
 kubectl get deployment ecsdemo-nodejs
 ```
+
+You should see something similar to the below:
+![nodejsdemo](/images/nodejs_demo.png)
+
