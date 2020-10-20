@@ -10,5 +10,4 @@ tags:
 
 {{< youtube SaT5jn2f8Hk >}}
 
-In this chapter, we'll learn about how to simplify access to different parts of the kubernetes clusters
-depending on IAM Groups
+In this chapter, we'll learn how to simplify access to different parts of the kubernetes clusters, depending on IAM Groups.

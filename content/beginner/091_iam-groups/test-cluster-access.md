@@ -72,8 +72,7 @@ The assumed-role is k8sDev, so we achieved our goal.
 When specifying the **--profile dev** parameter we automatically ask for temporary credentials for the role k8sDev.
 You can test this with **integ** and **admin** also.
  
-<details>
-  <summary>With admin:</summary>
+We can also try this with admin:
   
 ```bash
 aws sts get-caller-identity --profile admin
@@ -84,8 +83,7 @@ aws sts get-caller-identity --profile admin
 }
 ```
 
-> When specifying the **--profile admin** parameter we automatically ask for temporary credentials for the role k8sAdmin
-</details>
+> When specifying the **--profile admin** parameter we automatically ask for temporary credentials for the role k8sAdmin.
 
 ## Using AWS profiles with the Kubectl config file
 
@@ -224,7 +222,7 @@ There is a tool [kubectx / kubens](https://github.com/ahmetb/kubectx) that will 
 curl -sSLO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx && chmod 755 kubectx && sudo mv kubectx /usr/local/bin
 ```
 
-I can use kubectx to quickly list or switch Kubernetes contexts:
+We can use `kubectx` to quickly list or switch Kubernetes contexts:
 
 ```bash
 kubectx
@@ -238,7 +236,7 @@ i-0397aa1339e238a99@eksworkshop-eksctl-integ.eu-west-2.eksctl.io
 
 ## Conclusion
 
-In this module, we have seen how to configure EKS to provide finer access to users combining IAM Groups and Kubernetes RBAC.
+In this module, we have seen how to configure EKS to provide fine access permissions to users combining IAM Groups and Kubernetes RBAC.
 You can create different groups depending on your needs, configure their associated RBAC access in your cluster, and simply add or remove users from the group to grant or revoke access to your cluster.
 
 Users will only have to configure their AWS CLI in order to automatically retrieve their associated rights in your cluster.
