@@ -10,6 +10,6 @@ To test the service our eksdemo Chart created, we'll need to get the name of the
 kubectl get svc ecsdemo-frontend -o jsonpath="{.status.loadBalancer.ingress[*].hostname}"; echo
 ```
 
-Copy that address, and paste it into a new tab in your browser.  You should see something similar to:
+Copy that address, and paste it into a new tab in your browser. It will take a few minutes to come up, but you should see something similar to:
 
 ![Example Service](/images/helm_micro/micro_example.png)
