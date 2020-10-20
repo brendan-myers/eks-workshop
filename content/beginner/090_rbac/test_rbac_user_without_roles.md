@@ -39,7 +39,7 @@ kubectl get pods -n rbac-test
 You should get a response back similar to:
 
 {{< output >}}
-No resources found.  Error from server (Forbidden): pods is forbidden: User "rbac-user" cannot list resource "pods" in API group "" in the namespace "rbac-test"
+Error from server (Forbidden): pods is forbidden: User "rbac-user" cannot list resource "pods" in API group "" in the namespace "rbac-test"
 {{< /output >}}
 
 We already created the rbac-user, so why did we get that error?
