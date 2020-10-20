@@ -14,3 +14,9 @@ Copy/Paste the following commands into your Cloud9 workspace:
 ```
 aws iam get-role --role-name "AWSServiceRoleForElasticLoadBalancing" || aws iam create-service-linked-role --aws-service-name "elasticloadbalancing.amazonaws.com"
 ```
+
+If you run the get-role command again, you should see the new Role details.
+
+```
+aws iam get-role --role-name "AWSServiceRoleForElasticLoadBalancing"
+```

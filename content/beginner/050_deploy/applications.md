@@ -4,7 +4,9 @@ date: 2018-09-18T16:01:14-05:00
 weight: 5
 ---
 
-In the sample file below, we describe the service and *how* it should be deployed.
+We are going to deploy two applications: a NodeJS app and a Crystal app. For each, we have defined a `deployment.yaml` file.
+
+In the NodeJS example file below, we describe the service and *how* it should be deployed.
 We will write this description to the kubernetes api using kubectl, and kubernetes
 will ensure our preferences are met as the application is deployed.
 

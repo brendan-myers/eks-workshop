@@ -7,7 +7,6 @@ weight: 90
 To delete the resources created by the applications, we should delete the application
 deployments:
 
-Undeploy the applications:
 ```
 cd ~/environment/ecsdemo-frontend
 kubectl delete -f kubernetes/service.yaml
