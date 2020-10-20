@@ -4,9 +4,12 @@ date: 2018-08-07T08:30:11-07:00
 weight: 30
 ---
 
-Now we can access the Kubernetes Dashboard
+Now we can access the Kubernetes Dashboard.
 
 1. In your Cloud9 environment, click **Tools / Preview / Preview Running Application**
+
+![preview](/images/preview_running_application.png)
+
 1. Scroll to **the end of the URL** and append:
 
 ```text
@@ -27,4 +30,6 @@ Copy the output of this command and then click the radio button next to
 
 ![Token page](/images/dashboard-connect.png)
 
-Then press *Sign In*.
+Then press *Sign In*. You can now view the Kubernetes dashboard.
+
+![dashboard](/images/complete_dashboard.png)
