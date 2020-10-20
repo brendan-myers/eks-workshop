@@ -9,8 +9,8 @@ Cloud9 normally manages IAM credentials dynamically. This isn't currently compat
 the EKS IAM authentication, so we will disable it and rely on the IAM role instead.
 {{% /notice %}}
 
-- Return to your workspace and click the gear icon (in top right corner), or click to open a new tab and choose "Open Preferences"
-- Select **AWS SETTINGS**
+- Return to your workspace and click the gear icon (in top right corner), or click to open a new tab and choose **Open Preferences**
+- Select **AWS Settings**
 - Turn off **AWS managed temporary credentials**
 - Close the Preferences tab
 ![c9disableiam](/images/c9disableiam.png)
@@ -21,7 +21,7 @@ any existing credentials file:
 rm -vf ${HOME}/.aws/credentials
 ```
 
-We should configure our aws cli with our current region as default.
+We should configure our AWS cli with our current region as default.
 
 {{% notice info %}}
 If you are [at an AWS event](https://eksworkshop.com/020_prerequisites/aws_event/), ask your instructor which **AWS region** to use.
@@ -36,7 +36,9 @@ Check if AWS_REGION is set to desired region
 ```sh
 test -n "$AWS_REGION" && echo AWS_REGION is "$AWS_REGION" || echo AWS_REGION is not set
 ```
- 
+
+![c9instancerole](/images/region_is_set.png)
+
 Let's save these into bash_profile
 ```sh
 echo "export ACCOUNT_ID=${ACCOUNT_ID}" | tee -a ~/.bash_profile
