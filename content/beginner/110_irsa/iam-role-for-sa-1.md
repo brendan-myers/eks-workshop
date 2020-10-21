@@ -32,6 +32,7 @@ eksctl create iamserviceaccount \
 ```
 
 {{< output >}}
+[ℹ]  eksctl version 0.30.0
 [ℹ]  using region {AWS_REGION}
 [ℹ]  1 iamserviceaccount (default/iam-test) was included (based on the include/exclude rules)
 [!]  metadata of serviceaccounts that exist in Kubernetes will be updated, as --override-existing-serviceaccounts was set
