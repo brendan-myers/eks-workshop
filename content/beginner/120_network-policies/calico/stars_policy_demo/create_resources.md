@@ -4,7 +4,7 @@ date: 2018-08-07T08:30:11-07:00
 weight: 1
 ---
 
-Before creating network polices, let's create the required resources.
+Before creating network policies, let's create the required resources.
 
 Create a new folder for the configuration files.
 
@@ -30,7 +30,7 @@ metadata:
   name: stars
 {{< /output >}}
 
-Create a namespace called stars:
+Create a namespace called `stars`:
 
 ```
 kubectl apply -f namespace.yaml
@@ -183,8 +183,7 @@ kubectl apply -f backend.yaml
 kubectl apply -f frontend.yaml
 ```
 
-Lastly, let's examine how the client namespace, and a client service for a replication controller
-are built. `cat client.yaml`:
+Lastly, let's examine how the client namespace, and a client service for a replication controller are built. `cat client.yaml`:
 
 {{< output >}}
 kind: Namespace
@@ -229,7 +228,7 @@ spec:
     role: client
 {{< /output >}}
 
-Apply the client configuraiton.
+Apply the client configuration.
 
 ```
 kubectl apply -f client.yaml
@@ -265,10 +264,10 @@ stars           frontend-q4r84                                        1/1     Ru
 It may take several minutes to download all the required Docker images.
 {{% /notice %}}
 
-To summarize the different resources we created:
+To summarize, here are the different resources we created:
 
 * A namespace called **stars**
-* **frontend** and **backend** replication controllers and services within **stars** namespace
+* **frontend** and **backend** replication controllers and services within the **stars** namespace
 * A namespace called **management-ui**
 * Replication controller and service **management-ui** for the user interface seen on the browser, in the **management-ui** namespace
 * A namespace called **client**
