@@ -24,17 +24,9 @@ the cloud9 domain, or connecting to the workspace might be impacted.
 Cloud9 requires third-party-cookies. You can whitelist the [specific domains]( https://docs.aws.amazon.com/cloud9/latest/user-guide/troubleshooting.html#troubleshooting-env-loading).
 {{% /notice %}}
 
-{{% notice info %}}
-If you are using AWS Event Engine, you can only create your Cloud9 instance in the region specified by your instructor.
-{{% /notice %}}
-
-### Launch Cloud9 in the closest region:
+### Launch Cloud9 (us-east-2):
 {{< tabs name="Region" >}}
-{{{< tab name="Ohio" include="us-east-2.md" />}}
-{{{< tab name="Oregon" include="us-west-2.md" />}}
-{{{< tab name="Ireland" include="eu-west-1.md" />}}
-{{{< tab name="Singapore" include="ap-southeast-1.md" />}}
-{{{< tab name="Sydney" include="ap-southeast-2.md" />}}
+{{{< tab name="us-east-2" include="us-east-2.md" />}}
 {{< /tabs >}}
 
 - Select **Create environment**
