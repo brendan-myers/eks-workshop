@@ -5,14 +5,13 @@ weight: 12
 draft: false
 ---
 
-More Practical Use-cases
 AntiAffinity can be even more useful when they are used with higher level collections such as ReplicaSets, StatefulSets, Deployments, etc. One can easily configure that a set of workloads should be co-located in the same defined topology, eg., the same node.
 
 ### Always co-located in the same node
 
-In a three node cluster, a web application has in-memory cache such as redis. We want the web-servers to be co-located with the cache as much as possible.
+In a three node cluster, a web application has in-memory cache such as Redis. We want the web-servers to be co-located with the cache as much as possible.
 
-Here is the yaml snippet of a simple redis deployment with three replicas and selector label app=store. The deployment has PodAntiAffinity configured to ensure the scheduler does not co-locate replicas on a single node.
+Here is the yaml snippet of a simple Redis deployment with three replicas and selector label `app=store`. The deployment has PodAntiAffinity configured to ensure the scheduler does not co-locate replicas on a single node.
 
 ```bash
 cat <<EoF > ~/environment/redis-with-node-affinity.yaml
@@ -89,7 +88,7 @@ spec:
 EoF
 ```
 
-Let's apply this Deployments
+Let's apply these deployments.
 
 ```bash
 kubectl apply -f ~/environment/redis-with-node-affinity.yaml
