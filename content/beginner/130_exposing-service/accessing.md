@@ -86,18 +86,26 @@ We now have an environment variable referencing the nginx Service IP called `MY_
 
 #### DNS
 
-Kubernetes offers a DNS cluster add-on Service that automatically assigns dns names to other Services. You can check if it’s running on your cluster:
+Kubernetes offers a DNS cluster add-on Service that automatically assigns dns names to other Services. You can check if it’s running on your cluster.
 
-To check if your cluster is already running CoreDNS, use the following command.
+To see if your cluster is already running CoreDNS, use the following command.
 
 ```bash
 kubectl get pod -n kube-system -l k8s-app=kube-dns
 ```
 
 {{% notice note %}}
-The service for CoreDNS is still called `kube-dns` for backward compatibility.
+You may see that the service for CoreDNS is still called `kube-dns` for backward compatibility.
 {{% /notice %}}
 
+There are two possible outputs - coredns or kubedns depending on your setup.
+
+{{< output >}}
+NAME                       READY   STATUS    RESTARTS   AGE
+coredns-67bfd975c5-kbmqm   1/1     Running   0          95m
+{{< /output >}}
+
+or
 
 {{< output >}}
 NAME       TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)         AGE

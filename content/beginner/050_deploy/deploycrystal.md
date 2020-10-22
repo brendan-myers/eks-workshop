@@ -18,3 +18,8 @@ We can watch the progress by looking at the deployment status:
 ```
 kubectl get deployment ecsdemo-crystal
 ```
+
+You should see something similar to the below:
+![crystal_demo](/images/crystal_demo.png)
+
+

@@ -59,7 +59,7 @@ eksctl create iamserviceaccount \
         --approve
 ```
 
-Then, deploy AWS ALB Ingress controller
+Then, deploy an AWS ALB Ingress controller:
 
 ```bash
 # We dynamically replace the cluster-name by the name of our cluster before applying the YAML file

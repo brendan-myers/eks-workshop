@@ -20,7 +20,7 @@ to generate a name for you.
 **HINT:** Use the `helm` utility to `install` the `bitnami/nginx` chart
 and specify the name `mywebserver` for the Kubernetes deployment. Consult the
 [helm install](https://helm.sh/docs/intro/quickstart/#install-an-example-chart)
-documentation or run the `helm install --help` command to figure out the
+documentation or run the `helm install help` command to figure out the
 syntax.
 
 {{%expand "Expand here to see the solution" %}}

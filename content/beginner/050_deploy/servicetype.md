@@ -4,8 +4,7 @@ date: 2018-09-18T17:40:09-05:00
 weight: 25
 ---
 
-Before we bring up the frontend service, let's take a look at the service types
-we are using:
+Before we bring up the frontend service, let's take a look at the service types we are using:
 This is `kubernetes/service.yaml` for our frontend service:
 {{< output >}}
 apiVersion: v1

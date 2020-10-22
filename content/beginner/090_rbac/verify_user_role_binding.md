@@ -36,7 +36,6 @@ kubectl get pods -n kube-system
 
 You should get an error similar to:
 {{< output >}}
-No resources found.
 Error from server (Forbidden): pods is forbidden: User "rbac-user" cannot list resource "pods" in API group "" in the namespace "kube-system"
 {{< /output >}}
 

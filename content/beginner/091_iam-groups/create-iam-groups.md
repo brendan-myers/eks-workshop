@@ -14,7 +14,7 @@ We will define 3 groups:
 - **k8sInteg** - users from this group will have access to integration namespace. 
 
 > In fact, users from **k8sDev** and **k8sInteg** groups will only have access to namespaces where we will define kubernetes RBAC access for their associated kubernetes role.
-We'll see this but first, let's creates the groups.
+We'll see this but first, let's create the groups.
 
 #### Create k8sAdmin IAM Group
 

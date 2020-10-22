@@ -10,7 +10,7 @@ confirm this by viewing the running pods:
 kubectl get deployments
 ```
 
-Now let's scale up the backend services:
+Now let's scale up the backend services. We can run the `scale` command to increase the number of replicas we defined from 1 to 3.
 ```
 kubectl scale deployment ecsdemo-nodejs --replicas=3
 kubectl scale deployment ecsdemo-crystal --replicas=3
@@ -19,6 +19,9 @@ Confirm by looking at deployments again:
 ```
 kubectl get deployments
 ```
+
+It can take time between the deployments being UP_TO_DATE, and being READY. Run `kubectl get deployments` a few times until they are all ready:
+![deployments_ready](/images/deployments_ready.png)
 
 Also, check the browser tab where we can see our application running. You should
 now see traffic flowing to multiple backend services.

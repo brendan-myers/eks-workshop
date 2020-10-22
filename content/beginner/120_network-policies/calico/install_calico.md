@@ -10,7 +10,7 @@ Apply the Calico manifest from the [aws/amazon-vpc-cni-k8s GitHub project](https
 ```
 kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/v1.6/calico.yaml
 ```
-Let's go over few key features of the Calico manifest:
+Let's go over few key features of the [Calico manifest](https://github.com/aws/amazon-vpc-cni-k8s/blob/master/config/v1.6/calico.yaml):
 
 1) We see an annotation throughout; [annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) are a way to attach **non-identifying** metadata to objects. This metadata is not used internally by Kubernetes, so they cannot be used to identify within k8s. Instead, they are used by external tools and libraries. Examples of annotations include build/release timestamps, client library information for debugging, or fields managed by a network policy like Calico in this case.
 
@@ -65,7 +65,7 @@ Watch the kube-system daemon sets and wait for the calico-node daemon set to hav
 ```
 kubectl get daemonset calico-node --namespace=kube-system
 ```
-Expected Output:
+Expected output:
 
 {{< output >}}
 NAME          DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE

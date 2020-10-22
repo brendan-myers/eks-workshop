@@ -6,7 +6,7 @@ draft: false
 ---
 #### Exposing the Service
 
-For some parts of your applications you may want to expose a Service onto an external IP address. Kubernetes supports two ways of doing this: `NodePort` and `LoadBalancer`.
+For some parts of your application you may want to expose a Service onto an external IP address. Kubernetes supports two ways of doing this: `NodePort` and `LoadBalancer`.
 
 ```bash
 kubectl -n my-nginx get svc my-nginx
@@ -40,7 +40,7 @@ my-nginx   LoadBalancer   10.100.225.196   aca434079a4cb0a9961170c1-23367063.us-
 The Load Balancer can take a couple of minutes in being available on the DNS.
 {{% /notice %}}
 
-Now, let's try if it's accessible.
+Now, let's see if it's accessible.
 
 ```bash
 export loadbalancer=$(kubectl -n my-nginx get svc my-nginx -o jsonpath='{.status.loadBalancer.ingress[*].hostname}')
@@ -53,13 +53,14 @@ Output
 <title>Welcome to nginx!</title>
 {{< /output >}}
 
-If the Load Balancer name is too long to fit in the standard kubectl get svc output, you’ll need to do kubectl describe service my-nginx to see it. You’ll see something like this:
+If the Load Balancer name is too long to fit in the standard `kubectl get svc output`, you’ll need to do `kubectl describe service my-nginx` to see it.
 
 ```bash
 kubectl -n my-nginx describe service my-nginx | grep Ingress
 ```
 
-Output
+You’ll see something like this:
+
 {{< output >}}
 LoadBalancer Ingress:   a320587ffd19711e5a37606cf4a74574-1142138393.us-east-1.elb.amazonaws.com
 {{< /output >}}

@@ -7,11 +7,11 @@ weight: 31
 
 #### Gives Access to our IAM Roles to EKS Cluster
 
-In order to gives access to the IAM Roles we defined previously to our EKS cluster, we need to add specific **mapRoles** to the `aws-auth` ConfigMap
+In order to give access to the IAM Roles we defined previously to our EKS cluster, we need to add specific **mapRoles** to the `aws-auth` ConfigMap.
 
-The Advantage of using Role to access the cluster instead of specifying directly IAM users is that it will be easier to manage: 
-we won't have to update the ConfigMap each time we want to add or remove users, we will just need to add or remove users from 
-the IAM Group and we just configure the ConfigMap to allow the IAM Role associated to the IAM Group.
+The advantage of using Roles to access the cluster instead of directly specifying IAM users is that it will be easier to manage: 
+we won't have to update the ConfigMap each time we want to add or remove users. We just need to add or remove users from 
+the IAM Group, and configure the ConfigMap to associate the IAM Role with the IAM Group.
 
 ### Update the aws-auth ConfigMap to allow our IAM roles
 
@@ -43,7 +43,7 @@ It can also be used to delete entries
 
 `eksctl delete iamidentitymapping --cluster eksworkshop-eksctlv --arn arn:aws:iam::xxxxxxxxxx:role/k8sDev --username dev-user`
 
-you should have the config map looking something like:
+You should have the config map looking something like:
 
 ```bash
 kubectl get cm -n kube-system aws-auth -o yaml
@@ -71,7 +71,7 @@ data:
 kind: ConfigMap
 {{< /output >}}
 
-We can leverage eksctl to get a list of all identity managed in our cluster. Example:
+We can leverage eksctl to get a list of all identities managed in our cluster. For example:
 
 ```bash
 eksctl get iamidentitymapping --cluster eksworkshop-eksctl
@@ -90,4 +90,4 @@ Here we have created:
 - a RBAC role for k8sDev that we map on dev-user in development namespace
 - a RBAC role for k8sInteg that we map on integ-user in integration namespace
 
-We will see on next section how we can test it.
+We will see in next section how we can test it.

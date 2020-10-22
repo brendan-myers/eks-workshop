@@ -8,7 +8,7 @@ draft: false
 Now that we have completed all the necessary configuration, we will run two kubernetes [jobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/) with the newly created IAM role:
 
 * **job-s3.yaml**: that will output the result of the command `aws s3 ls` (this job should be successful).
-* **job-ec2.yaml**: that will output the result of the command `aws ec2 describe-instances --region ${AWS_REGION}` (this job should failed).
+* **job-ec2.yaml**: that will output the result of the command `aws ec2 describe-instances --region ${AWS_REGION}` (this job should fail).
 
 ### List S3 buckets
 
@@ -56,7 +56,7 @@ Let's check the logs to verify that the command ran successfully.
 kubectl logs -l app=eks-iam-test-s3
 ```
 
-Output example
+Output example:
 {{< output >}}
 2020-04-17 12:30:41 eksworkshop-eksctl-helm-charts
 2020-02-12 01:48:05 eksworkshop-logs
@@ -64,7 +64,7 @@ Output example
 
 ### List EC2 Instances
 
-Now Let's confirm that the service account cannot list the EC2 instances
+Now let's confirm that the service account cannot list the EC2 instances
 
 ```bash
 cat <<EoF> ~/environment/irsa/job-ec2.yaml
@@ -90,7 +90,7 @@ EoF
 kubectl apply -f ~/environment/irsa/job-ec2.yaml
 ```
 
-Let's verify the job status
+Let's verify the job status.
 
 ```bash
 kubectl get job -l app=eks-iam-test-ec2
@@ -102,18 +102,17 @@ eks-iam-test-ec2   0/1           39s        39s
 {{< /output >}}
 
 {{% notice info %}}
-It is normal that the job didn't complete succesfuly.
+It is normal that the job didn't complete succesfully.
 {{% /notice %}}
 
-
-Finally we will review the logs
+Finally, we will review the logs.
 
 ```bash
 kubectl logs -l app=eks-iam-test-ec2
 ```
 
-Output
-{{< output >}}
+We are not authorized to call this operation, so we should see the following output:
 
+{{< output >}}
 An error occurred (UnauthorizedOperation) when calling the DescribeInstances operation: You are not authorized to perform this operation.
 {{< /output >}}

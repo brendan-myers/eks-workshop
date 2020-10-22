@@ -5,7 +5,7 @@ draft: false
 weight: 22
 ---
 
-In order to test our scenarios, we will create 3 users, one for each groups we created :
+In order to test our scenarios, we will create 3 users, one for each group we created:
 
 ```bash
 aws iam create-user --user-name PaulAdmin
@@ -30,7 +30,7 @@ aws iam get-group --group-name k8sInteg
 ```
 
 {{% notice note %}}
-For the sake of simplicity, in this chapter, we will save credentials to a file to make it easy to toggle back and forth between users.  Never do this in production or with credentials that have priviledged access; It is not a security best practice to store credentials on the filesystem.
+For the sake of simplicity in this chapter, we will save credentials to a file to make it easy to toggle back and forth between users. Never do this in production or with credentials that have privileged access; it is not a security best practice to store credentials on the filesystem.
 {{% /notice %}}
 
 Retrieve Access Keys for our fake users:
